@@ -48,11 +48,13 @@ body.dark-mode .form {
 }
 
 button {
-  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 12px 20px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  border-radius: 50px;
+  border-radius: 50%;
   background-color: var(--color-primary-light);
   color: var(--color-text-dark);
   cursor: pointer;

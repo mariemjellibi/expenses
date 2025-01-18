@@ -42,7 +42,7 @@ import { fetchTransaction } from './api'; // Ensure fetchTransaction is properly
 import ExpenseChart from './compo/ExpenseChart.jsx';
 import TransactionForm from './compo/TransactionForm.jsx';
 import TransactionList from './compo/TransactionList.jsx';
-import { FaMoon, FaSun } from 'react-icons/fa'; // Import light and moon icons
+import { FaMoon, FaSun } from 'react-icons/fa'; // Importing moon and sun icons
 
 const App = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();
@@ -68,16 +68,17 @@ const App = () => {
       <div className="container mx-auto max-w-6xl text-center">
         {/* Header */}
         <div className="flex justify-between items-center py-4">
-          <h1 className="text-4xl text-white bg-gradient-to-r from-purple-500 to-blue-500 p-2 rounded-lg shadow-md">
+          <h1 className="text-4xl bg-slate-800 text-white rounded px-4 py-2">
             Expense Tracker
           </h1>
-          <div onClick={toggleDarkMode} className="cursor-pointer">
-            {darkMode ? (
-              <FaSun size={24} color="white" />
-            ) : (
-              <FaMoon size={24} color="white" />
-            )}
-          </div>
+          <button
+            onClick={toggleDarkMode}
+            className={`py-2 px-4 border rounded ${
+              darkMode ? 'bg-gray-700 text-white' : 'bg-indigo-500 text-white'
+            }`}
+          >
+            {darkMode ? <FaSun size={24} /> : <FaMoon size={24} />} {/* Icons instead of text */}
+          </button>
         </div>
         <TransactionForm onTransactionCreated={handleTransactionCreated} />
         <TransactionList transactions={transactions} />
@@ -88,4 +89,3 @@ const App = () => {
 };
 
 export default App;
-
