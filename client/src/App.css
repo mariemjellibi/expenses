@@ -1,0 +1,44 @@
+:root {
+  --color-background-light: #ffffff;
+  --color-background-dark: #1a202c;
+  --color-text-light: #1a202c;
+  --color-text-dark: #ffffff;
+  --color-card-light: #f7fafc;
+  --color-card-dark: #2d3748;
+}
+
+body {
+  background-color: var(--color-background-light);
+  color: var(--color-text-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-dark);
+}
+
+.App {
+  text-align: center;
+  padding: 4rem;
+}
+
+.graph,
+.form {
+  background-color: var(--color-card-light);
+  color: var(--color-text-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .graph,
+body.dark-mode .form {
+  background-color: var(--color-card-dark);
+  color: var(--color-text-dark);
+}
+
+button {
+  transition: background-color 0.3s, color 0.3s;
+}
